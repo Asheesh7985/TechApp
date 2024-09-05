@@ -1,0 +1,173 @@
+<script>
+$(document).ready(function(){
+    $('#signupButton').click(function(){
+
+        var fname = $('#first_name').val();
+
+        if(fname == ""){
+            $("#fnameError").html("**Enter the First Name");
+            $("#fnameError").css('color','red');
+            return false;
+        }
+    })
+    $("#signupButton").click(function(){
+        var lname = $("#last_name").val();
+
+        if(lname == ""){
+            $("#lnameError").html("**Please Enter Last Name");
+            $("#lnameError").css('color','red');
+            return false
+        }
+
+    })
+    $("#signupButton").click(function(){
+        var email = $("#email").val();
+
+        if(email == ""){
+            $("#emailError").html("**Please Enter The Email");
+            $("#emailError").css("color","red");
+            return false
+        }
+    })
+    $("#signupButton").click(function(){
+        var phone = $("#phone").val();
+
+        if(phone == ""){
+            $("#phoneError").html("**Please Enter Phone Number ");
+            $("#phoneError").css("color","red");
+            return false
+        }
+    })
+    $("#signupButton").click(function(){
+        var password = $("#password").val();
+
+        if(password == ""){
+            $("#passwordError").html("**Please Enter Your Password ");
+            $("#passwordError").css("color","red");
+            return false
+        }
+    })
+    $("#signupButton").click(function(){
+        var profile = $("#profile").val();
+
+        if(profile == ""){
+            $("#profileError").html("**Please Select Your Profile Picture");
+            $("#profileError").css("color","red");
+            return false
+        }
+    })
+
+    $("#loginButton").click(function(){
+        var email = $("#email").val();
+
+        if (email ==""){
+            $("#emailError").html("**Please Enter Your Email");
+            $("#emailError").css("color","red");
+            return false
+        }
+    })
+    $("#loginButton").click(function(){
+        var password = $("#password").val();
+
+        if (password ==""){
+            $("#passwordError").html("**Please Enter Your Email");
+            $("#passwordError").css("color","red");
+            return false
+        }
+    })
+    $("#contactButton").click(function(){
+        var name = $("#name").val();
+
+        if(name == ""){
+            $("#nameError").html("**Please Enter Your Name")
+            $("#nameError").css('color','red')
+            return false
+        }
+    })
+    $("#contactButton").click(function(){
+        var email = $("#email").val();
+
+        if (email == ""){
+            $("#emailError").html("**Please Enter Your Email")
+            $("#emailError").css('color','red')
+            return false
+        }
+        
+    })
+    $("#contactButton").click(function(){
+        var message = $("#message").val();
+
+        if(message == ""){
+            $("#messageError").html("**Please Enter Your Message")
+            $("#messageError").css('color','red')
+            return false
+        }
+    })
+    $("#cpButton").click(function(){
+        var password1 = $("#newpassword").val();
+
+        if(password1 == ""){
+            $("#pass1Error").html("**Please Enter Your Password")
+            $("#pass1Error").css('color','red')
+            return false
+        }
+    })
+    $("#cpButton").click(function(){
+        var password2 = $("#cpassword").val();
+
+        if(password2 == ""){
+            $("#pass2Error").html("**Please Enter Your Confirm Password")
+            $("#pass2Error").css('color','red')
+            return false
+        }
+    })
+    $("#updateButton").click(function(){
+        var fname = $("#first_name").val();
+
+        if(fname ==""){
+            $("#fnameError").html("**Please Enter Your First Name");
+            $("#fnameError").css('color','red');
+            return false;
+        }
+    })
+    $("#updateButton").click(function(){
+        var lname = $("#last_name").val();
+
+        if(lname ==""){
+            $("#lnameError").html("**Please Enter Your Last Name");
+            $("#lnameError").css('color','red')
+            return false;
+        }
+    })
+    $("#updateButton").click(function(){
+        var phone =  $("#phone").val();
+
+        if(phone ==""){
+            $("#phoneError").html("**Please Enter Your Phone Number");
+            $("#phoneError").css('color','red')
+            return false;
+        }
+    })
+    $("#updateButton").click(function(){
+        var profile = $("#profile").val();
+
+        if(profile == " "){
+            $("#profileError").html("**Please Select Your Profile Picture");
+            $("#profileError").css("color","red");
+            return false
+        }
+    })
+    $("#categoryButton").click(function(){
+        var cat = $("#category").val();
+
+        if(cat == ""){
+            $("#cError").html("**Please Enter Your Category");
+            $("#cError").css("color","red");
+            return false
+        }
+    })
+
+
+    
+})
+</script>

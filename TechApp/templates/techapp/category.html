@@ -1,0 +1,67 @@
+{% extends 'techapp/base.html' %}
+{% load static %}
+{% block title %}
+    Tech-Blog | Category
+{% endblock  %}
+{% block content %}
+<div class="sidebar">
+    <a class="" href="{% url 'dashboard' %}">All Posts</a>
+    <a class="active" href="{% url 'category' %}">All Categorys</a>
+    <a class="" href="{% url 'addpost' %}">Add Posts</a>
+    <a class="" href="{% url 'addcategory' %}">Add Categorys</a>
+    <a class="" href="{% url 'userprofile' %}">User Profile</a>
+    <a class="" href="{% url 'changepassword' %}">Change Password</a>
+</div>
+<div class="content" style="height:900px">
+    <section class="vh-80 py-4" >
+        <div class="container h-100 ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11"> 
+                    <div class="card text-black mt-3" style="border-radius: 25px;">
+                        <div class="card-body ">
+                            <div class="row justify-content-center">
+                                
+                                <div class="col-md-10 col-lg-7 col-xl-6 order-2 order-lg-1">
+                                    <p class="text-center h1 fw-bold mt-3">Category List</p>
+                                    <div class="d-flex flex-column  ">
+                                       <table class="table table-hover">
+                                           <thead>
+                                              <tr>
+                                                <th scope="col">ID</th>
+                                                <th>NAME</th>
+                                                <th>Action</th>
+                                              </tr>
+                                           </thead>
+                                           <tbody>
+                                            {% for category in category %}
+                                            <tr>
+                                                <td>{{category.id}}</td>
+                                                <td>{{category.cname}}</td>
+                                                <td style="display: flex;">
+                                                    <a href="{% url 'editcategory' category.id %}" class="btn btn-warning btn-sm mx-2">Edit </a>
+                                                    <a href="{% url 'deletecategory' category.id %}" class="btn btn-danger btn-sm ">Delete </a>
+                                                    
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                           </tbody>
+                                       </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-10 col-lg-4 col-xl-5 order-1 order-lg-2">
+                                    <img src="{% static 'images/2941990.jpg' %}"  
+                                         class="img-fluid" alt="Sample image">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal -->
+
+{% endblock %}

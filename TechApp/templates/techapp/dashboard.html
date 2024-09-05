@@ -1,0 +1,58 @@
+{% extends 'techapp/base.html' %}
+{% load static %}
+{% block title %}
+    Tech-Blog | Dashboard
+{% endblock  %}
+{% block content %}
+<div class="sidebar">
+    <a class="active" href="">All Posts</a>
+    <a class="" href="{% url 'category' %}">All Categorys</a>
+    <a class="" href="{% url 'addpost' %}">Add Posts</a>
+    <a class="" href="{% url 'addcategory' %}">Add Categorys</a>
+    <a class="" href="{% url 'userprofile' %}">User Profile</a>
+    <a class="" href="{% url 'changepassword' %}">Change Password</a>
+  </div>
+  {% if post %}
+  <div class="content" style="height:auto">
+    {% else %}
+    <div class="content" style="height:900px">
+    {% endif %}
+    <section class="vh-80 py-4" >
+        <div class="container h-100 ">
+          <div class="row d-flex justify-content-center align-items-center h-80">
+            {% if post %}
+            <div class="col-lg-12 col-xl-11">
+              {% for post in post %}
+              <div class="card text-black mt-3" style="border-radius: 25px;">
+                <div class="card-body ">
+                  <div class="row justify-content-center">
+                     <div class="col-md-10 col-lg-8 col-xl-7 order-2 order-lg-1">
+                        <div class="d-flex  mb-2 mb-lg-4">
+                            <a href="{% url 'updatepost' post.slug %}" class="btn btn-warning btn-md mx-2 fw-bold"  data-mdb-button-init data-mdb-ripple-init>Edit Post</a>
+                            <a href="{% url 'deletepost' post.slug %}" class="btn btn-danger btn-md mx-2 fw-bold"  data-mdb-button-init data-mdb-ripple-init>Delete Post</a>
+                         </div>
+                         <hr/>
+                        <div class="d-flex flex-column  mb-2 mb-lg-5">
+                            <div class="fs-3">Post ID: <span class="text-danger ms-4 fw-bold fs-4 pe-4 "> {{post.id}}</span></div> 
+                            <div class="fs-3 mt-2">Post title: <span class="text-danger ms-3  fs-3">{{post.title}}</span></div>
+                            <div class="fs-3 mt-2">Post Slug:   <span class="text-danger ms-3  fs-3">{{post.slug}}</span></div>
+                            <div class="fs-3 mt-2">Category:   <span class="text-danger ms-3  fs-3">{{post.category}}</span></div>
+                            <div class="fs-3 mt-2">Date:   <span class="text-danger ms-3  fs-3">{{post.date}}</span></div>
+                        </div> 
+                     </div>
+                     <div class="col-md-10 col-lg-3 col-xl-4 order-1 order-lg-2">
+                        <img src="{{post.image.url}}"  style="height: 300px;"
+                            class="img-fluid" alt="Sample image">
+                     </div>
+                  </div>
+              </div>
+            {% endfor %}
+            </div>
+            {% else %}
+             <h1 class="text-center text-danger">No Post available</h1>
+            {% endif %}
+          </div>
+        </div>
+    </section>
+   </div>
+{% endblock  %}

@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: rgb(9, 49, 100);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 2.3rem;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-right: 20px;
+}
+
+ul li a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: lightgreen;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 80px;
+    height: 65%;
+
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 20px;
+    
+}
+
+.sidebar a.active {
+    background-color: rgb(9, 49, 100);
+    color: white;
+    border-radius: 20px;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+    border-radius: 20px;
+}
+
+div.content {
+    margin-left: 250px;
+    padding: 1px 16px;
+    height: 1200px;
+    padding-bottom: 20px;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+
+    background-color: rgb(54, 51, 51);
+
+}
+#signup{
+    height: auto;
+}
+
+
+footer {
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+label[for="title_id"]{
+    color: red;
+    font-size: 15px;
+    
+    
+}
+label[for="slug_id"]{
+    color: red;
+    font-size: 15px;
+  
+    
+}
+label[for="category_id"]{
+    color: red;
+    font-size: 15px;
+   
+    
+}
+label[for="author_id"]{
+    color: red;
+    font-size: 15px;
+    
+    
+}
+label[for="id_content"]{
+    color: red;
+    font-size: 15px;
+    
+    
+}
+label[for="id_image"]{
+    color: red;
+    font-size: 15px;
+   
+    
+}
+
+
+#id_image {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+th {
+    font-size: 25px;
+   
+}
+
+td {
+    font-size: 20px;
+    
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+        order: 1;
+        margin-right: 10px;
+    }
+    ul {
+        position: fixed; 
+        background-color: rgb(9, 49, 100);
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+        z-index: 1;
+       
+       
+    }   
+
+    ul li {
+        margin: 15px 0;
+    }
+
+    ul li a {
+        font-size: 20px;
+    }
+    ul li a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+   }
+   .ul-div li a:hover {
+    color: lightgreen;
+   }
+
+
+
+    #check:checked~ul {
+        right: 0;
+    }
+    .sidebar {
+        width: 100%;
+        height: 50%;
+        height: auto;
+        top: 0px;
+        position: relative;
+        display: flex;
+        
+    }
+    .sidebar a {
+        float: left;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    div.content {
+        margin-left: 0; 
+        padding: 0px 8px;
+        align-items: center;
+    }
+   
+    .footer-section{
+        position:relative;
+        padding-bottom:100px;
+    }
+    footer {    
+        position:absolute;
+        bottom:0;
+        left:0;
+        /*your style after that*/
+        width:100vw;
+        height:100px;
+      
+    }
+ 
+}
+
+  
+/* @media screen and (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+} */

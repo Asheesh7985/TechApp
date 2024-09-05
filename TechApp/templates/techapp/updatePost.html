@@ -1,0 +1,49 @@
+{% extends 'techapp/base.html' %}
+{% load static %}
+{% block title %}
+    Tech-Blog | UpdatePost
+{% endblock  %}
+
+{% block content %}
+<section class="vh-80 py-4" style="background-color: #eee;">
+    <div class="container h-100 ">
+      <div class="row d-flex justify-content-center align-items-center h-80">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-10 col-xl-10 order-2 order-lg-1">
+                  {% if messages %}
+                  {% for message in messages %}
+                  <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show" 
+                     role="alert" {% endif %} >
+                   <strong>{{message}}</strong>
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+                  {% endfor %}
+                  {% endif %}
+                  <p class="text-center text-danger  h1 fw-bold mb-5 mx-1 mx-md-4 ">Update Post</p>
+                  <form class="mx-1 mx-md-4" method = "POST" enctype="multipart/form-data">
+                   
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                            {% csrf_token %}
+                            {{form.media}}
+                            {{form.as_p}}
+                        </div>
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-3 mb-2 mb-lg-4">
+                       <button  type="submit"  class="btn btn-success btn-lg m-2">Update Post</button>
+                       <a  href="{% url 'dashboard' %}"  class="btn btn-warning btn-lg m-2">Dashboard</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock  %}
